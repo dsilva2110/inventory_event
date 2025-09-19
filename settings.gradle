@@ -1,0 +1,17 @@
+rootProject.name = 'inv'
+
+include ':app-service'
+project(':app-service').projectDir = file('applications/app-service')
+
+include ':usecase'
+project(':usecase').projectDir = file('domain/usecase')
+
+include ':model'
+project(':model').projectDir = file('domain/model')
+
+include ':async-event-handler'
+project(':async-event-handler').projectDir = file('./infrastructure/entry-points/async-event-handler')
+
+include ':mongo-repository'
+findProject(':mongo-repository').projectDir = file('./infrastructure/driven-adapters/mongo-repository')
+

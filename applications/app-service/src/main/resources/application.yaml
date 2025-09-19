@@ -1,0 +1,33 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: "inv"
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual
+        default-requeue-rejected: false
+  data:
+    mongodb:
+      host: "localhost"
+      port: 27017
+      databaseName: "inventory"
+      username: "root"
+      password: "admin"
+      authentication-database: "admin"
+
+app:
+  rabbitmq:
+    queue-name: inventory.stock.queue
+
+
+logging:
+  level:
+    org.springframework.context.annotation: DEBUG
+    org.springframework.beans.factory: DEBUG
