@@ -12,6 +12,12 @@ public class StoreInventory {
     public StoreInventory() {
     }
 
+    public StoreInventory(String storeCode, String productCode, int quantity ) {
+        this.storeCode = storeCode;
+        this.productCode = productCode;
+        this.quantity = quantity;
+    }
+
     public String getStoreCode() {
         return storeCode;
     }
